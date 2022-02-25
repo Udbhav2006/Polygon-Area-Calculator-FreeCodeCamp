@@ -1,5 +1,5 @@
-class Rectangle(width, height):
-  def __init__(self):
+class Rectangle():
+  def __init__(self, width, height):
     self.width = int(width)
     self.height = int(height)
 
@@ -24,8 +24,17 @@ class Rectangle(width, height):
       pic += '*' * self.width + '\n'
     return pic
 
-  def get_amount_inside(self):
-    
-
+  def get_amount_inside(self, shape):
+    height_left = self.height
+    count = 0
+    for i in shape.height:
+      if i < height_left:
+        height_left -= i
+        count += self.width // shape.width
+    return count
+  
+  def __str__(self):
+    return f"Rectangle(width = {str(self.width)}, height = {str(self.height)})"
 
 class Square:
+  pass
