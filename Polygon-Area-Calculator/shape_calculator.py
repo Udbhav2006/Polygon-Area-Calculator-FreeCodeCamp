@@ -30,7 +30,7 @@ class Rectangle():
   def get_amount_inside(self, shape):
     height_left = self.height
     count = 0
-    while shape.height < height_left:
+    while shape.height <= height_left:
       height_left -= shape.height
       count += self.width // shape.width
     return count
